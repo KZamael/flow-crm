@@ -27,8 +27,8 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
         login.setAction("login");
 
         add(new H1("Vaadin CRM"));
-        add(new Span("Username: user, Password: password"));
-        add(new Span("Username: admin, Password: password"));
+        add(new Span("Username: user, Password: userpass"));
+        add(new Span("Username: admin, Password: userpass"));
         add(login);
     }
 
