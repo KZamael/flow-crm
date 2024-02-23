@@ -18,20 +18,12 @@ import java.util.List;
  */
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class CrmService {
 
     private final ContactRepository contactRepository;
     private final CompanyRepository companyRepository;
     private final StatusRepository statusRepository;
-
-    public CrmService(ContactRepository contactRepository,
-                      CompanyRepository companyRepository,
-                      StatusRepository statusRepository) {
-
-        this.contactRepository = contactRepository;
-        this.companyRepository = companyRepository;
-        this.statusRepository = statusRepository;
-    }
 
     /**
      * Lists all existing Contacts
