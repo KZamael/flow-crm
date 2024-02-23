@@ -27,25 +27,33 @@ import java.util.List;
 public class CheckboxView extends VerticalLayout {
 
     CrmService service;
+    Checkbox checkbox;
+    List<Company> companies;
+
+    CheckboxGroup<Company> checkboxGroup;
 
     public CheckboxView(CrmService service) {
         this.service = service;
         setPadding(false);
 
-        Checkbox checkbox = new Checkbox("Enable Checkboxlist");
-        List<Company> companies = service.findAllCompanies();
-        CheckboxGroup<Company> checkboxGroup = new CheckboxGroup<>();
+        checkbox = new Checkbox("Enable Checkboxlist");
+        companies = service.findAllCompanies();
+        checkboxGroup = new CheckboxGroup<>();
 
-        adjustCheckboxGroup(checkboxGroup, companies, checkbox);
-        addValueChangeListener(checkbox, checkboxGroup, companies);
+        adjustCheckboxGroup();
+        addValueChangeListener();
 
         // Check some boxes beforehand...
-        checkboxGroup.select(companies.get(0), companies.get(2));
+        preSelectCheckboxes(companies.get(0), companies.get(2));
 
         add(checkbox, checkboxGroup);
     }
 
-    private static void addValueChangeListener(Checkbox checkbox, CheckboxGroup<Company> checkboxGroup, List<Company> companies) {
+    protected void preSelectCheckboxes(Company... company) {
+        checkboxGroup.select(company);
+    }
+
+    private void addValueChangeListener() {
         checkbox.addValueChangeListener(event -> {
            if (checkbox.getValue()) {
                checkboxGroup.setValue(new HashSet<>(companies));
@@ -55,7 +63,7 @@ public class CheckboxView extends VerticalLayout {
         });
     }
 
-    private static void adjustCheckboxGroup(CheckboxGroup<Company> checkboxGroup, List<Company> companies, Checkbox checkbox) {
+    private void adjustCheckboxGroup() {
         checkboxGroup.setLabel("Enable and Disable Company Names");
         checkboxGroup.setItemLabelGenerator(Company::getName);
         checkboxGroup.setItems(companies);
