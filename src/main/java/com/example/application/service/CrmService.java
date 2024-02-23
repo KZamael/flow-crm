@@ -6,6 +6,8 @@ import com.example.application.data.entity.Status;
 import com.example.application.data.repository.CompanyRepository;
 import com.example.application.data.repository.ContactRepository;
 import com.example.application.data.repository.StatusRepository;
+import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

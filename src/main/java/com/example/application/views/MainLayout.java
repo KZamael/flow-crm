@@ -1,6 +1,7 @@
 package com.example.application.views;
 
 import com.example.application.security.SecurityService;
+import com.example.application.views.list.CheckboxView;
 import com.example.application.views.list.ListView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
@@ -13,6 +14,9 @@ import com.vaadin.flow.router.HighlightConditions;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.theme.lumo.LumoUtility;
 
+/**
+ * Main Layout of the application
+ */
 public class MainLayout extends AppLayout {
 
     private final SecurityService securityService;
@@ -49,12 +53,14 @@ public class MainLayout extends AppLayout {
     private void createDrawer() {
         RouterLink listView = new RouterLink("list", ListView.class);
         RouterLink dashboardView = new RouterLink("dashboard", DashboardView.class);
+        RouterLink checkboxGroupBasic = new RouterLink("checkbox", CheckboxView.class);
 
         listView.setHighlightCondition(HighlightConditions.sameLocation());
 
         addToDrawer(new VerticalLayout(
                 listView,
-                dashboardView
+                dashboardView,
+                checkboxGroupBasic
         ));
     }
 }
