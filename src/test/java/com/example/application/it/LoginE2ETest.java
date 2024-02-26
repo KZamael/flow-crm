@@ -9,13 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.core.env.Environment;
 
-import static com.example.application.contants.TestContants.INVALID_PASSWORD;
-import static com.example.application.contants.TestContants.USERNAME_ADMIN;
-import static com.example.application.contants.TestContants.USERNAME_USER;
+import static com.example.application.constants.TestConstants.INVALID_PASSWORD;
+import static com.example.application.constants.TestConstants.USERNAME_ADMIN;
+import static com.example.application.constants.TestConstants.USERNAME_USER;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import static com.example.application.contants.TestContants.PASSWORD;
+import static com.example.application.constants.TestConstants.PASSWORD;
 
 // Sets the webEnvironment Property with some Port...
 //@RunLocally(Browser.FIREFOX)

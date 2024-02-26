@@ -27,15 +27,6 @@ public class CheckboxViewTest {
         checkboxView.preSelectCheckboxes(companies.get(0), companies.get(2));
 
         Set<Company> selectedItems  = checkboxView.checkboxGroup.getSelectedItems();
-        /*System.out.println(selectedItems.stream()
-                .map(Company::getName)
-                .collect(Collectors.joining(", ")));
-
-        // All checkboxes
-        System.out.println(companies.stream()
-                .map(Company::getName)
-                .collect(Collectors.joining(", ")));
-        */
 
         // assert
         assertTrue(checkboxView.checkboxGroup.isSelected(companies.get(0)));
@@ -62,6 +53,42 @@ public class CheckboxViewTest {
         assertFalse(checkboxView.checkboxGroup.isSelected(companies.get(3)));
 
         assertEquals("Phillips Van Heusen Corp., Avaya Inc., Laboratory Corporation of America Holdings",
+                selectedItems.stream().map(Company::getName).collect(Collectors.joining(", ")));
+    }
+
+    @Test
+    public void boxCheckedWhenAllCompaniesSelected() {
+        // arrange & act
+        List<Company> companies = checkboxView.service.findAllCompanies();
+        checkboxView.preSelectCheckboxes(companies.get(0), companies.get(1), companies.get(2), companies.get(3), companies.get(4));
+
+        Set<Company> selectedItems  = checkboxView.checkboxGroup.getSelectedItems();
+
+        // assert
+        assertTrue(checkboxView.checkboxGroup.isSelected(companies.get(0)));
+        assertTrue(checkboxView.checkboxGroup.isSelected(companies.get(1)));
+        assertTrue(checkboxView.checkboxGroup.isSelected(companies.get(2)));
+        assertTrue(checkboxView.checkboxGroup.isSelected(companies.get(3)));
+
+        assertEquals("Phillips Van Heusen Corp., Avaya Inc., Laboratory Corporation of America Holdings, AutoZone, Inc., Linens 'n Things Inc.",
+                selectedItems.stream().map(Company::getName).collect(Collectors.joining(", ")));
+    }
+
+    @Test
+    public void boxCheckedWhenNoneSelected() {
+        // arrange & act
+        List<Company> companies = checkboxView.service.findAllCompanies();
+        checkboxView.checkboxGroup.deselectAll();
+
+        Set<Company> selectedItems  = checkboxView.checkboxGroup.getSelectedItems();
+
+        // assert
+        assertFalse(checkboxView.checkboxGroup.isSelected(companies.get(0)));
+        assertFalse(checkboxView.checkboxGroup.isSelected(companies.get(1)));
+        assertFalse(checkboxView.checkboxGroup.isSelected(companies.get(2)));
+        assertFalse(checkboxView.checkboxGroup.isSelected(companies.get(3)));
+
+        assertEquals("",
                 selectedItems.stream().map(Company::getName).collect(Collectors.joining(", ")));
     }
 }

@@ -1,0 +1,4 @@
+vaadin-button.orange {
+    background: var(--create-primary-color);
+    border-radius: var(--lumo-border-radius-s);
+}

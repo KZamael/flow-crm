@@ -1,10 +1,10 @@
-package com.example.application.contants;
+package com.example.application.constants;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class TestContants {
+public class TestConstants {
 
     public static final String USERNAME_USER = "user";
 

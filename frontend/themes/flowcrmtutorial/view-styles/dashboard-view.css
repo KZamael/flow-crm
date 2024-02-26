@@ -1,0 +1,4 @@
+.dashboard-view .filters {
+    background: var(lumo-contrast-5pct);
+    gap: var(--lumo-space-l)
+}

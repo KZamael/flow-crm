@@ -9,3 +9,24 @@ a[highlight] {
     font-weight: bold;
     text-decoration: underline;
 }
+
+html {
+    --create-primary-color: rgb(255, 2, 91);
+    --create-secondary-color: rgb(247, 94, 0);
+    --create-teritary-color: rgb(244, 182, 0);
+
+    --create-heading-font: "Poppins", sans-serif;
+    --create-body-font: "Source Sans 3", sans-serif;
+
+    --lumo-primary-color: var(--create-primary-color);
+    --lumo-primary-text-color: color-mix(in, srgb, var(--create-primary-color), 20% black);
+    --lumo-border-radius: 0.5rem;
+    --lumo-font-family: var(--create-body-font);
+}
+
+html[theme="dark"] {
+    --lumo-primary-color: hsl(214, 86%, 55%);
+    --lumo-primary-text-color: hsl(214, 100%, 70%);
+    --lumo-error-color: hsl(3, 90%, 63%);
+    --lumo-error-text-color: hsl(3, 100%, 67%);
+}

@@ -6,6 +6,7 @@ import com.example.application.views.MainLayout;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
+import com.vaadin.flow.component.grid.GridVariant;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.textfield.TextField;
@@ -76,7 +77,7 @@ public class ListView extends VerticalLayout {
         grid.addColumn(contact -> contact.getStatus().getName()).setHeader("Status");
         grid.addColumn(contact -> contact.getCompany().getName()).setHeader("Company");
         grid.getColumns().forEach(col -> col.setAutoWidth(true)); // Gets all the Columns, grabs every and sets the Autowith to true
-
+        grid.addThemeVariants(GridVariant.LUMO_WRAP_CELL_CONTENT);
         // Multi and single select modes are supported
         grid.asSingleSelect().addValueChangeListener(event ->
                 editContact(event.getValue()));

@@ -1,0 +1,19 @@
+vaadin-text-field::part(input-field) {
+    background: cornflowerblue;
+}
+
+/* part with invalid selector */
+vaadin-text-field[invalid]::part(input-field) {
+    background: darkred;
+}
+
+/* part call with states [hidden, pristine etc.] sector */
+vaadin-text-field.search-field::part(input-field) {
+
+}
+
+/* Select all component */
+::part(input-field) {}
+
+/* exclude a component */
+:not(vaadin-number-field)::part(input-field) {}
