@@ -1,8 +1,10 @@
 package com.example.application.views;
 
 import com.example.application.security.SecurityService;
+import com.example.application.views.dialog.ConfirmDialogBasic;
 import com.example.application.views.list.CheckboxView;
 import com.example.application.views.list.ListView;
+import com.example.application.views.list.BirthDateView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
@@ -54,13 +56,17 @@ public class MainLayout extends AppLayout {
         RouterLink listView = new RouterLink("list", ListView.class);
         RouterLink dashboardView = new RouterLink("dashboard", DashboardView.class);
         RouterLink checkboxGroupBasic = new RouterLink("checkbox", CheckboxView.class);
+        RouterLink confirmDialog = new RouterLink("confirm-dialog-basic", ConfirmDialogBasic.class);
+        RouterLink birthdateView = new RouterLink("birthdate-view", BirthDateView.class);
 
         listView.setHighlightCondition(HighlightConditions.sameLocation());
 
         addToDrawer(new VerticalLayout(
                 listView,
                 dashboardView,
-                checkboxGroupBasic
+                checkboxGroupBasic,
+                confirmDialog,
+                birthdateView
         ));
     }
 }

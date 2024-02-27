@@ -18,10 +18,12 @@ import com.vaadin.flow.data.binder.BeanValidationBinder;
 import com.vaadin.flow.data.binder.Binder;
 import com.vaadin.flow.shared.Registration;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.List;
 
-
+@Setter
+@Getter
 public class ContactForm extends FormLayout {
     TextField firstName = new TextField("First name");
     TextField lastName = new TextField("Last name");

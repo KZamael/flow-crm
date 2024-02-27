@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class TestConstants {
 
+    public static final int SERVER_PORT = 8080;
+
     public static final String USERNAME_USER = "user";
 
     public static final String USERNAME_ADMIN = "admin";

@@ -6,12 +6,12 @@ import com.example.application.data.entity.Status;
 import com.example.application.data.repository.CompanyRepository;
 import com.example.application.data.repository.ContactRepository;
 import com.example.application.data.repository.StatusRepository;
-import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Service implementation for the connection to the backend logic
@@ -63,4 +63,6 @@ public class CrmService {
     public List<Status> findAllStatuses() {
         return statusRepository.findAll();
     }
+
+    public Optional<Contact> findById(Long aLong) { return contactRepository.findById(aLong); }
 }

@@ -14,4 +14,6 @@ public class DataEntityConstants {
     public static final String EMPLOYEES = "employees";
     public static final String IDGENERATOR = "idgenerator";
 
+    public static final String ROUTE = "birthdate-view";
+
 }
