@@ -1,6 +1,5 @@
 package com.example.application.views.dialog;
 
-import com.example.application.service.CrmService;
 import com.example.application.views.MainLayout;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.confirmdialog.ConfirmDialog;
@@ -22,7 +21,7 @@ import org.springframework.context.annotation.Scope;
 public class ConfirmDialogBasic extends Div {
 
     public ConfirmDialog dialog;
-    private final Span status;
+    protected Span status;
 
     public ConfirmDialogBasic() {
 
@@ -40,8 +39,6 @@ public class ConfirmDialogBasic extends Div {
            dialog.open();
            status.setVisible(false);
         });
-
-        dialog.open();
 
         horizontalLayout.add(button, status);
         add(horizontalLayout);
@@ -76,6 +73,7 @@ public class ConfirmDialogBasic extends Div {
     private void setStatus(String value) {
         status.setText("Status: " + value);
         status.setVisible(true);
+        dialog.close();
     }
 
 }

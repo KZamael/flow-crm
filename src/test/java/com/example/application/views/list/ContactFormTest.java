@@ -6,6 +6,7 @@ import com.example.application.data.entity.Contact;
 import com.example.application.data.entity.Status;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,6 +14,7 @@ import java.util.concurrent.atomic.AtomicReference;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+@SpringBootTest
 public class ContactFormTest {
     private List<Company> companies;
     private List<Status> statuses;

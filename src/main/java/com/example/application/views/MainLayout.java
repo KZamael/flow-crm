@@ -2,9 +2,10 @@ package com.example.application.views;
 
 import com.example.application.security.SecurityService;
 import com.example.application.views.dialog.ConfirmDialogBasic;
+import com.example.application.views.dialog.HelloWorldView;
+import com.example.application.views.list.BirthDateView;
 import com.example.application.views.list.CheckboxView;
 import com.example.application.views.list.ListView;
-import com.example.application.views.list.BirthDateView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
@@ -57,7 +58,8 @@ public class MainLayout extends AppLayout {
         RouterLink dashboardView = new RouterLink("dashboard", DashboardView.class);
         RouterLink checkboxGroupBasic = new RouterLink("checkbox", CheckboxView.class);
         RouterLink confirmDialog = new RouterLink("confirm-dialog-basic", ConfirmDialogBasic.class);
-        RouterLink birthdateView = new RouterLink("birthdate-view", BirthDateView.class);
+        RouterLink birthdateView = new RouterLink("birthdate", BirthDateView.class);
+        RouterLink helloWorldView = new RouterLink("hello", HelloWorldView.class);
 
         listView.setHighlightCondition(HighlightConditions.sameLocation());
 
@@ -66,7 +68,8 @@ public class MainLayout extends AppLayout {
                 dashboardView,
                 checkboxGroupBasic,
                 confirmDialog,
-                birthdateView
+                birthdateView,
+                helloWorldView
         ));
     }
 }

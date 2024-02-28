@@ -1,6 +1,6 @@
-package com.example.application.it;
+package com.example.application.e2e;
 
-import com.example.application.it.elements.LoginViewElement;
+import com.example.application.e2e.elements.LoginViewElement;
 import com.vaadin.testbench.BrowserTest;
 import com.vaadin.testbench.BrowserTestBase;
 import com.vaadin.testbench.IPAddress;
@@ -55,7 +55,7 @@ public class LoginE2ETest extends BrowserTestBase {
     }
 
     @BrowserTest
-    public void loginAsInvalidAdbzvUserFails() {
+    public void loginAsInvalidAdminUserFails() {
         LoginViewElement loginView = $(LoginViewElement.class).onPage().first();
         assertFalse(loginView.login(USERNAME_ADMIN, INVALID_PASSWORD));
     }

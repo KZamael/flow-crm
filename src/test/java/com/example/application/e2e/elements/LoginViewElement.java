@@ -1,4 +1,4 @@
-package com.example.application.it.elements;
+package com.example.application.e2e.elements;
 
 import com.vaadin.flow.component.login.testbench.LoginFormElement;
 import com.vaadin.flow.component.orderedlayout.testbench.VerticalLayoutElement;

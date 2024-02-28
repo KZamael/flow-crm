@@ -18,7 +18,7 @@ import java.time.LocalDate;
 @SpringComponent
 @Scope("prototype")
 @PermitAll
-@Route(value = "birthdate-view", layout = MainLayout.class)
+@Route(value = "birthdate", layout = MainLayout.class)
 @PageTitle("BirthDate | Vaadin CRM")
 public class BirthDateView extends VerticalLayout {
 
